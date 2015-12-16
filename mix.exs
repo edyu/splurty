@@ -32,7 +32,7 @@ defmodule Splurty.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.0.4"},
      {:phoenix_ecto, "~> 1.1"},
-     {:mariaex, ">= 0.0.0"},
+     {:mariaex, ">= 0.6.1", override: true},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"}]

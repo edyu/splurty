@@ -9,23 +9,48 @@
 
     <title>Hello Phoenix!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
-    <div class="container" role="main">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-        </ul>
-        <span class="logo"></span>
+  <body class="Site">
+    <header>
+      <div class="col-xs-6">
+        <div class="circle">
+          <br />
+          Elixir &
+          <br />
+          Erland
+          <br />
+          Rock!
+        </div>
       </div>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <div class="col-xs-6 text-right">
+        <div id="header-links">
+          <%= link "Contribute", to: quote_path(@conn, :new) %>
+        </div>
+      </div>
+    </header>
 
+    <hr class="clear col-xs-12"/>
+
+    <main class="Site-content">
       <%= @inner %>
+    </main>
 
-    </div> <!-- /container -->
+    <footer>
+      <div class="col-xs-6">
+        <%= link "This isn't enough, I need more", to: quote_path(@conn, :homepage) %>
+      </div>
+      <div class="col-xs-6 text-right">
+        <a href="http://elixir-lang.org">
+          <img src="/images/elixir.png"/>
+        </a>
+        <a href="http://phoenixframework.org">
+          <img src="/images/phoenix.png"/>
+        </a>
+      </div>
+    </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
